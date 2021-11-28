@@ -1,0 +1,15 @@
+current directory: /Users/imotoyuya/Desktop/dev/Zinnia/vender/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/imotoyuya/.rbenv/versions/3.0.3/bin/ruby -I /Users/imotoyuya/.rbenv/versions/3.0.3/lib/ruby/3.0.0 -r ./siteconf20211127-11456-nx37p8.rb extconf.rb
+creating Makefile
+
+current directory: /Users/imotoyuya/Desktop/dev/Zinnia/vender/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: /Users/imotoyuya/Desktop/dev/Zinnia/vender/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/imotoyuya/Desktop/dev/Zinnia/vender/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20211127-11456-w462or/skiptrace/internal
