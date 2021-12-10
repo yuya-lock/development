@@ -3,4 +3,5 @@ module ApplicationHelper
     title = "Zinnia"
     title = @page_title + " - " + title if @page_title
     title
+  end
 end
