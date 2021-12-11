@@ -1,9 +1,11 @@
 fnames = [ "佐藤", "鈴木", "高橋", "田中"]
 gnames = ["太郎", "次郎", "花子"]
-10.times(i) do |i|
+fnames_mail = [ "sato", "suzuki", "takahashi", "tanaka"]
+gnames_mail = [ "taro", "ziro", "hanako"]
+10.times do |i|
   User.create(
     name: "#{fnames[i % 4]} #{gnames[i % 3]}",
-    mail: "#{names[i]}@example.com",
+    mail: "#{fnames_mail[i % 4]}#{gnames_mail[i % 3]}}@example.com",
     password: "example"
   )
 end
