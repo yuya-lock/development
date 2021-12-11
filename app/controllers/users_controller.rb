@@ -37,6 +37,8 @@ class UsersController < ApplicationController
 
   # リソースを削除する(テーブルからレコードを削除する)
   def destroy
-    
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to "#", notice: "アカウントを削除しました。"
   end
 end
