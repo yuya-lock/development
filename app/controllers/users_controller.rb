@@ -6,7 +6,12 @@ class UsersController < ApplicationController
 
   # リソースを作成する(テーブルに新しいレコードを作成する)
   def create
-
+    @user = User.new(params[:user])
+    if @user.save
+      redirect_to @user, notice: "アカウントを登録しました。"
+    else
+      render "new"
+    end
   end
 
   # リソースの属性を表示する(レコードの内容を表示する)
