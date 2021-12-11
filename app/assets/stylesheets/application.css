@@ -14,6 +14,13 @@
  *= require_self
  */
 
+/* フラッシュ */
+p.notice {
+  border: 1px solid bulue;
+  padding: 3px;
+  background-color: #ccf;
+}
+
 .top-bg-img {
   background-image: url("https://cdn.sanity.io/images/oxekkfaj/production/7d43bc17b75273266f96ad32f92316d9639e3744-3000x2000.jpg?w=2000");
   background-size: cover;
