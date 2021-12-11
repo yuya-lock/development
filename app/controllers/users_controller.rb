@@ -1,10 +1,8 @@
 class UsersController < ApplicationController
-  # リソースを追加する(テーブルに新しいレコードを作成する)ためのフォームを作る
   def new
     @user = User.new
   end
 
-  # リソースを作成する(テーブルに新しいレコードを作成する)
   def create
     @user = User.new(params[:user])
     if @user.save
@@ -14,17 +12,14 @@ class UsersController < ApplicationController
     end
   end
 
-  # リソースの属性を表示する(レコードの内容を表示する)
   def show
     @user = User.find(params[:id])
   end
 
-  # リソースを更新する(既存のレコードのカラムを更新する)ためのフォームを表示する
   def edit
     @user = User.find(params[:id])
   end
 
-  # リソースを更新する(既存のレコードのカラムを更新する)
   def update
     @user = User.find(params[:id])
     @user.assign_attributes(params[:user])
@@ -35,7 +30,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # リソースを削除する(テーブルからレコードを削除する)
   def destroy
     @user = User.find(params[:id])
     @user.destroy
