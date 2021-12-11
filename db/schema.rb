@@ -10,6 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_12_11_065633) do
+
+  create_table "users", charset: "utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "mail", null: false
+    t.string "password", null: false
+    t.boolean "is_host", default: false, null: false
+    t.string "top_image"
+    t.string "back_image"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end
