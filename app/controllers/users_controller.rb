@@ -26,7 +26,13 @@ class UsersController < ApplicationController
 
   # リソースを更新する(既存のレコードのカラムを更新する)
   def update
-
+    @user = User.find(params[:id])
+    @user.assign_attributes(params[:user])
+    if @user.save
+      redirect_to @user, notice: "アカウント情報を更新しました。"
+    else
+      render "edit"
+    end
   end
 
   # リソースを削除する(テーブルからレコードを削除する)
