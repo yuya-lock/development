@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_11_131204) do
+ActiveRecord::Schema.define(version: 2021_12_11_151549) do
 
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2021_12_11_131204) do
     t.string "back_image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "password_digest"
   end
 
 end
