@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   get "about" => "top#about", as: "about"
   get "content" => "top#content", as: "content"
 
-  resources :users
+  resources :users, except: [:index]
 end
