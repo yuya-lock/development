@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 2021_12_11_151549) do
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "mail", null: false
-    t.string "password", null: false
+    t.string "hashed_password", null: false
     t.string "top_image"
     t.string "back_image"
     t.datetime "created_at", precision: 6, null: false
