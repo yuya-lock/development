@@ -6,6 +6,7 @@ gnames_mail = [ "taro", "ziro", "hanako"]
   User.create(
     name: "#{fnames[i % 4]}#{gnames[i % 3]}",
     mail: "#{fnames_mail[i % 4]}#{gnames_mail[i % 3]}}@example.com",
-    password: "example"
+    password: "example",
+    password_confirmation: "example"
   )
 end
