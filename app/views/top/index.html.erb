@@ -1,16 +1,9 @@
 <div class="mb-4">
   <section id="top">
     <div class="container-fluid top-bg-img">
-      <%
-=begin%>
- <header>
-        <%= render "shared/header" %>
-      </header> 
-<%
-=end%>
       <h1 class="display-4">Useful Contents for Dance Circles</h1>
       <p class="lead">大学ダンスサークル向け便利ツール</p>
-      <a class="btn btn-outline-primary btn-lg" href="content" role="button">Check Here</a>
+      <%= link_to "Check Here", :content, class: "btn btn-outline-primary btn-lg" %>
     </div>
   </section>
 </div>
@@ -86,7 +79,7 @@
           </div>
         </div>
       </div>
-      <a class="btn btn-outline-primary" href="#" role="button">投稿一覧へ</a>
+      <%= link_to "投稿一覧へ", "#", class: "btn btn-outline-primary" %>
     </div>
   </section>
 </div>
@@ -99,7 +92,7 @@
         Zinniaでは、現在チケット受付を行っている公演に限り、公演チケットの予約もできます。まずは所属のサークル員から電子チケットをもらい、そちらに記載のチケットIDを入力することで、チケットの予約を行うことができます。
         予約完了後、メールにてQRコードを送付致します。公演当日は入場の際にそのQRコードが必要となりますので、当日まで保管しておいてください。
       </p>
-      <a class="btn btn-outline-primary" href="#" role="button">予約画面へ</a>
+      <%= link_to "予約画面へ", "#", class: "btn btn-outline-primary" %>
     </div>
   </section>
 </div>
@@ -113,7 +106,7 @@
         関東圏でホールや体育館をお探しの方は要チェック！
       </p>
       <img src="https://cdn.sanity.io/images/oxekkfaj/production/7d43bc17b75273266f96ad32f92316d9639e3744-3000x2000.jpg?w=2000" alt="" class="col-md-4">
-      <a class="btn btn-outline-primary" href="#" role="button">検索画面へ</a>
+      <%= link_to "検索画面へ", "#", class: "btn btn-outline-primary" %>
     </div>
   </section>
 </div>

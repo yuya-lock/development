@@ -1,19 +1,19 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-transparent sticky-top"> 
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top"> 
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Zinnia</a>
+    <%= link_to "Zinnia", :root, id: "logo" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbar-content">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="about">About</a>
+          <%= link_to "About", :about %>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="/users/new">新規登録</a>
+          <%= link_to "新規登録", :new_user %>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="#">ログイン</a>
+          <%= link_to "ログイン", :login %>
         </li>
       </ul>
     </div>
