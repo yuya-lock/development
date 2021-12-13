@@ -1,0 +1,21 @@
+<% @page_title = "ログイン" %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+  <h1><%= @page_title %></h1>
+    <%= form_with(url: login_path, scope: :session, local: true) do |form| %>
+
+      <div>
+        <%= form.label :mail, "メールアドレス" %>
+        <%= form.text_field :mail, class: 'form-control' %>
+      </div>
+      <div>
+        <%= form.label :password, "パスワード" %>
+        <%= form.password_field :password, class: 'form-control' %>
+      </div>
+      <div>
+        <%= form.submit "ログイン", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
