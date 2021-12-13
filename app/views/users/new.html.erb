@@ -2,7 +2,7 @@
 
 <h1><%= @page_title %></h1>
 
-<%= form_for @user do |form| %>
+<%= form_with @user do |form| %>
   <%= render "form", form: form %>
   <div><%= form.submit "新規登録", class: "btn btn-primary" %></div>
 <% end %>
