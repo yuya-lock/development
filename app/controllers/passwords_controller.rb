@@ -1,4 +1,4 @@
-class PassowrdsController < ApplicationController
+class PasswordsController < ApplicationController
   before_action :login_required
 
   def show
