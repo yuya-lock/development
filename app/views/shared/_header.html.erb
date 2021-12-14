@@ -9,7 +9,10 @@
         <li class="nav-item active"><%= link_to "About", :about %></li>
         <% if logged_in? %>
           <li>
-            <%= link_to "ログアウト", logout_path, method: :delete %>
+            <%= link_to current_user.name + "さん", :account %>
+          </li>
+          <li>
+            <%= link_to "ログアウト", logout_path, method: :delete, data: { confirm: "ログアウトしますか？" } %>
           </li>
         <% else %>
           <li class="nav-item active"><%= link_to "新規登録", :new_user %></li>
