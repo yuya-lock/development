@@ -1,5 +1,3 @@
-<%= render "shared/errors", obj: @user %>
-
 <%= @page_title = "アカウント情報の編集" %>
 
 <h1><%= @page_title %></h1>
@@ -10,13 +8,15 @@
   <div class="col-md-6 col-md-offset-3">  
     <%= form_for @user, as: "account", url: :account, local: true do |form| %>
 
-      <%= form.label :name, "ユーザー名" %>
-      <%= form.text_field :name, class: 'form-control' %>
+    <%= form.label :name, "ユーザー名" %>
+    <%= form.text_field :name, class: 'form-control' %>
+    <%= render "shared/errors", model: @user, attribute: :name %>
 
-      <%= form.label :mail, "メールアドレス" %>
-      <%= form.text_field :mail, class: 'form-control' %>
+    <%= form.label :mail, "メールアドレス" %>
+    <%= form.text_field :mail, class: 'form-control' %>
+    <%= render "shared/errors", model: @user, attribute: :mail %>
 
-      <%= form.submit "更新", class: "btn btn-primary" %>
+    <%= form.submit "更新", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
