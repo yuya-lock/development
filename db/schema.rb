@@ -17,7 +17,6 @@ ActiveRecord::Schema.define(version: 2021_12_15_023201) do
     t.string "circle_name", null: false
     t.string "university", null: false
     t.text "body", null: false
-    t.datetime "posted_at", null: false
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
