@@ -17,6 +17,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem "bcrypt"
 gem "rails-i18n"
 gem "kaminari"
+gem "kaminari-i18n"
 gem "date_validator"
 gem "valid_email2"
 gem "nokogiri"
