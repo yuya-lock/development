@@ -32,6 +32,8 @@ group :development do
   gem 'spring'
   gem 'rubocop'
   gem 'rubocop-rails'
+  gem 'pre-commit'
+  gem 'rubocop'
 end
 
 group :test do
