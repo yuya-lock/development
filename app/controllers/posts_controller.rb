@@ -12,6 +12,31 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.fnid(params[:id])
+    @post = Post.find(params[:id])
+  end
+
+  def create
+    @post = Post.new(params[:post])
+    if @post.save
+      redirect_to @post, notice: "投稿しました。"
+    else
+      render "new"
+    end
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.assign_attributes(params[:post])
+    if @post.save
+      redirect_to @post, notice: "投稿を編集しました。"
+    else
+      render "edit"
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to :posts
   end
 end
