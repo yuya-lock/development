@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :users, except: [:index, :edit]
   resource :account, only: [:show, :edit, :update]
   resource :password, only: [:show, :edit, :update]
+  resources :posts
 end
