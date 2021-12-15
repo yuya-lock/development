@@ -6,8 +6,8 @@
     <tbody>
       <% @posts.each do |post| %>
         <tr>
-          <td><%= link_to post.university, "#" %></td>
-          <td><%= link_to post.circle_name, "#" %> | </td>
+          <td><%= link_to post.university, post %></td>
+          <td><%= link_to post.circle_name, post %> | </td>
           <td>
             <%= link_to "編集", [:edit, post] %> |
             <%= link_to "削除", post, method: :delete, data: { confirm: "本当に削除しますか？" } %>
