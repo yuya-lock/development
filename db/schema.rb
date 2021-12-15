@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_12_14_013641) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "remember_digest"
+    t.index ["mail"], name: "index_users_on_mail", unique: true
   end
 
 end

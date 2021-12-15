@@ -1,6 +1,4 @@
 class PasswordsController < ApplicationController
-  before_action :login_required
-
   def show
     redirect_to :account
   end
@@ -11,7 +9,7 @@ class PasswordsController < ApplicationController
 
   def update
     @user = current_user
-    current_passowrd = params[:account][:current_password]
+    current_password = params[:account][:current_password]
 
     if current_password.present?
       if @user.authenticate(current_password)
@@ -22,7 +20,7 @@ class PasswordsController < ApplicationController
           render "edit"
         end
       else
-        @uesr.errors.add(:current_password, :wrong)
+        @user.errors.add(:current_password, :wrong)
         render "edit"
       end
     else

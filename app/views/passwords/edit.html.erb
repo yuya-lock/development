@@ -16,7 +16,7 @@
     <%= render "shared/errors", model: @user, attribute: :password %>
 
     <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confimation, class: 'form-control' %>
+    <%= form.password_field :password_confirmation, class: 'form-control' %>
     <%= render "shared/errors", model: @user, attribute: :password_confirmation %>
 
     <%= form.submit "変更", class: "btn btn-primary" %>
