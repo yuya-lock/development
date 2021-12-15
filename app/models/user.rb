@@ -10,6 +10,8 @@ class User < ApplicationRecord
   attr_accessor :current_password
   validates :password, presence: { if: :current_password }
 
+  has_many :posts, dependent: :destroy
+
   # 渡された文字列のハッシュ値を返す
   def self.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
