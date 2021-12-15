@@ -1,7 +1,13 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.order(created_at: :desc)
-    @posts = @posts.page(params[:page]).per(5)
+    if params[:user_id]
+      @user = User.find(params[:user_id])
+      @posts = @user.posts
+    else
+      @posts = Post.all
+    end
+    
+    @posts = Post.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def show
@@ -13,11 +19,12 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = cuurent_user.posts.find(params[:id])
   end
 
   def create
     @post = Post.new(params[:post])
+    @post.author = current_user
     if @post.save
       redirect_to @post, notice: "投稿しました。"
     else
@@ -26,18 +33,18 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
     @post.assign_attributes(params[:post])
     if @post.save
-      redirect_to @post, notice: "投稿を編集しました。"
+      redirect_to @post, notice: "投稿を更新しました。"
     else
       render "edit"
     end
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
     @post.destroy
-    redirect_to :posts
+    redirect_to :posts, notice: "投稿を削除しました。"
   end
 end

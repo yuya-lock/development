@@ -1,29 +1,13 @@
 <% @page_title = "投稿詳細" %>
 <h1><%= @page_title %></h1>
 
+<div class="toolbar">
+  <%= link_to "投稿一覧へ戻る", :posts %>
+</div>
 
-<%
-=begin%>
- <% if current_user %> 
-<%
-=end%>
-  <div class="toolbar">
-    <%= link_to "投稿一覧へ戻る", :posts %> |
-    <%= link_to "編集", [:edit, @post] %> |
-    <%= link_to "削除", @post, method: :delete, data: { confirm: "本当に削除しますか？" } %>
-  </div>
-<%
-=begin%>
- <% end %>  
-<%
-=end%>
+<h5><%= @post.university %></h5>
+<h5><%= @post.circle_name %></h5>
 
-<table class="attr">
-  <tr>
-    <td><%= @post.university %></td>
-  </tr>
-    <td><%= @post.circle_name %></td>
-  <tr>
-    <td><%= simple_format(@post.body) %></td>
-  </tr>
-</table>
+<%= simple_format(@post.body) %>
+
+<%= render "footer", post: @post %>

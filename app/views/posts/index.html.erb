@@ -1,17 +1,19 @@
-<% @page_title = "投稿一覧" %>
+<% @page_title = @user ? @user.name + "さんの投稿一覧" : "投稿一覧" %>
 <h1><%= @page_title %></h1>
 
+<% if current_user %>
+  <%= link_to "投稿画面へ", :new_post, class: "btn btn-outline-primary" %>
+<% end %>
+
 <% if @posts.present? %>
-  <table class="list">
-    <tbody>
-      <% @posts.each do |post| %>
-        <tr>
-          <td><%= link_to post.university, post %></td>
-          <td><%= link_to post.circle_name, post %> | </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <% @posts.each do |post| %>
+    <p><%= link_to post.author.name, [post.author, :posts] %></p>
+    <h5><%= post.university %></h5>
+    <h5><%= post.circle_name %></h5>
+    <p><%= truncate(post.body, length: 80) %>
+      <%= link_to "もっと読む", post %></p>
+    <%= render "footer", post: post %>
+  <% end %>
   <%= paginate @posts %>
 <% else %>
   <p>投稿がありません。</p>

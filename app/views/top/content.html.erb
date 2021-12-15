@@ -94,7 +94,9 @@
           </div>
         </div>
       </div>
-      <%= link_to "投稿画面へ", :new_post, class: "btn btn-outline-primary" %>
+      <% if current_user %>
+        <%= link_to "投稿画面へ", :new_post, class: "btn btn-outline-primary" %>
+      <% end %>
       <%= link_to "投稿一覧へ", :posts, class: "btn btn-outline-primary" %>
     </div>
   </section>
