@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form.label :circle_name %>
+    <%= form.text_field :circle_name, class: 'form-control' %>
+    <%= render "shared/errors", model: @post, attribute: :circle_name %>
+  
+    <%= form.label :university %>
+    <%= form.text_field :university, class: 'form-control' %>
+    <%= render "shared/errors", model: @post, attribute: :university %>
+  
+    <%= form.label :body %>
+    <%= form.text_area :body, class: 'form-control' %>
+    <%= render "shared/errors", model: @post, attribute: :body %>
+  </div>
+</div>
