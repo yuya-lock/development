@@ -23,6 +23,7 @@
           <%= form.label :password, class: "col-md-2 col-form-label" %>
           <div class="col-md-10">
             <%= form.password_field :password, class: 'form-control' %>
+          </div>
           <%= render "shared/errors", model: @user, attribute: :password %>
         </div>
         <div class="form-group row py-3">
