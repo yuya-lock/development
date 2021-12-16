@@ -1,19 +1,33 @@
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form.label :name %>
-    <%= form.text_field :name, class: 'form-control' %>
+<div class="container p-2">
+  <div class="form-group row pb-3">
+    <%= form.label :name, class: "col-md-2 col-form-label" %>
+    <div class="col-md-10">
+      <%= form.text_field :name, class: 'form-control', id: "name" %>
+    </div>
     <%= render "shared/errors", model: @user, attribute: :name %>
+  </div>
   
-    <%= form.label :mail %>
-    <%= form.text_field :mail, class: 'form-control' %>
+  <div class="form-group row py-3">
+    <%= form.label :mail, class: "col-md-2 col-form-label" %>
+    <div class="col-md-10">
+      <%= form.text_field :mail, class: 'form-control' %>
+    </div>
     <%= render "shared/errors", model: @user, attribute: :mail %>
+  </div>
   
-    <%= form.label :password %>
-    <%= form.password_field :password, class: 'form-control' %>
+  <div class="form-group row py-3">
+    <%= form.label :password, class: "col-md-2 col-form-label" %>
+    <div class="col-md-10">
+      <%= form.password_field :password, class: 'form-control' %>
+    </div>
     <%= render "shared/errors", model: @user, attribute: :password %>
+  </div>
   
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, class: 'form-control' %>
+  <div class="form-group row py-3">
+    <%= form.label :password_confirmation, class: "col-md-2 col-form-label" %>
+    <div class="col-md-10">
+      <%= form.password_field :password_confirmation, class: 'form-control' %>
+    </div>
     <%= render "shared/errors", model: @user, attribute: :password_confirmation %>
   </div>
 </div>
