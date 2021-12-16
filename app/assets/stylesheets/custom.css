@@ -11526,4 +11526,9 @@ p.notice {
   width: 100%;
   height: 200px;
 }
+
+.title-bg {
+  background-color: #e9ecef;
+  height: 8em;
+}
 /*# sourceMappingURL=custom.css.map */
