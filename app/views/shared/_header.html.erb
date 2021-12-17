@@ -1,22 +1,23 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top"> 
-  <div class="container-fluid">
-    <%= link_to "Zinnia", :root, id: "logo" %>
+<nav class="navbar navbar-expand-md navbar-light bg-transparent fixed-top" style="padding: 32px 25px;"> 
+  <div class="container-fluid" id="header">
+    <%= link_to "Zinnia", :root, class: "header-logo1 link-decoration" %>
+    <%= link_to "Zinnia", :root, class: "header-logo2 link-decoration" %>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbar-content">
+    <div class="collapse navbar-collapse justify-content-end">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active"><%= link_to "About", :about %></li>
+        <li class="nav-item active mx-2"><%= link_to "Zinniaとは", :about, class: "header-link link-decoration mx-2" %></li>
         <% if logged_in? %>
           <li>
-            <%= link_to current_user.name + "さん", :account %>
+            <%= link_to current_user.name + "さん", :account, class: "header-link link-decoration mx-2" %>
           </li>
           <li>
-            <%= link_to "ログアウト", logout_path, method: :delete, data: { confirm: "ログアウトしますか？" } %>
+            <%= link_to "ログアウト", logout_path, method: :delete, class: "header-link link-decoration mx-2", data: { confirm: "ログアウトしますか？" } %>
           </li>
         <% else %>
-          <li class="nav-item active"><%= link_to "新規登録", :new_user %></li>
-          <li><%= link_to "ログイン", login_path %></li>
+          <li class="nav-item active"><%= link_to "新規登録", :new_user, class: "header-link link-decoration mx-2" %></li>
+          <li><%= link_to "ログイン", login_path, class: "header-link link-decoration mx-2" %></li>
         <% end %>
       </ul>
     </div>
