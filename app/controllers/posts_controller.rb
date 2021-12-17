@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @post.author = current_user
+    @post.image.attach(params[:post][:image])
     if @post.save
       redirect_to @post, notice: "投稿しました。"
     else
@@ -47,4 +48,10 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to :posts, notice: "投稿を削除しました。"
   end
+
+  private
+
+    def post_params
+      params.require(:post).permit(:content, :image)
+    end
 end
