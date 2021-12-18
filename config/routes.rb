@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get "login" => "sessions#new"
   post "login" => "sessions#create"
   delete "logout" => "sessions#destroy"
+  get "bad_request" => "top#bad_request"
+  get "forbidden" => "top#forbidden"
+  get "internal_server_error" => "top#internal_server_error"
 
   resources :users, except: [:index, :edit] do
     resources :posts, only: [:index]
