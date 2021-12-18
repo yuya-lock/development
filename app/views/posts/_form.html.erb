@@ -18,12 +18,14 @@
   <div class="form-group row py-3">
     <%= form.label :body, class: "col-md-2 col-form-label" %>
     <div class="col-md-9">
-      <%= form.text_area :body, class: 'form-control', id: "body", rows: "8", name: "body" %>
+      <%= form.text_area :body, class: 'form-control', rows: "8", id: "body" %>
     </div>
     <%= render "shared/errors", model: @post, attribute: :body %>
   </div>
 
-  <div class="image">
+  <%
+=begin%>
+ <div class="image">
     <%= form.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
   </div>
 
@@ -35,5 +37,7 @@
         $("#post_image").val("");
       }
     });
-  </script> 
+  </script>  
+<%
+=end%>
 </div>
