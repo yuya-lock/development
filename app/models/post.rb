@@ -16,10 +16,13 @@ class Post < ApplicationRecord
   belongs_to :author, class_name: "User", foreign_key: "user_id"
   has_one_attached :picture
   attribute :new_picture
+  attribute :remove_picture, :boolean
 
   before_save do
     if new_picture
       self.picture = new_picture
+    elsif remove_picture
+      self.picture.purge
     end
   end
 end

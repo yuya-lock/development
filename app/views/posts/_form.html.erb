@@ -28,6 +28,13 @@
     <div class="col-md-9">
       <%= form.file_field :new_picture, class: 'form-control', id: "picture" %>
     </div>
+    <% if @post.picture.attached? %>
+      <div>
+        <%= image_tag @post.picture.variant(resize: "128x128") %>
+        <%= form.check_box :remove_picture %>
+        <%= form.label :remove_picture %>
+      </div>
+    <% end %>
     <%= render "shared/errors", model: @post, attribute: :new_picture %>
   </div>
-</>
+</div>
