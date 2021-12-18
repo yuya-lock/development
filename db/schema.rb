@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 2021_12_17_104612) do
     t.string "circle_name", null: false
     t.string "university", null: false
     t.text "body", null: false
-    t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
@@ -55,8 +54,6 @@ ActiveRecord::Schema.define(version: 2021_12_17_104612) do
     t.string "name", null: false
     t.string "mail", null: false
     t.string "password_digest", null: false
-    t.string "top_image"
-    t.string "back_image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "remember_digest"
