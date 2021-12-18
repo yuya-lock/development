@@ -23,21 +23,10 @@
     <%= render "shared/errors", model: @post, attribute: :body %>
   </div>
 
-  <%
-=begin%>
- <div class="image">
-    <%= form.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+  <div class="form-group row py-3">
+    <%= form.label :new_image, class: "col-md-2 col-form-label" %>
+    <div class="col-md-9">
+      <%= form.file_field :new_image, class: 'form-control', id: "image" %>
+    </div>
   </div>
-
-  <script type="text/javascript">
-    $("#post_image").bind("change", function() {
-      var size_in_megabytes = this.files[0].size/1024/1024;
-      if (size_in_megabytes > 5) {
-        alert("Maximum file size is 5MB. Please choose a smaller file.");
-        $("#post_image").val("");
-      }
-    });
-  </script>  
-<%
-=end%>
-</div>
+</>

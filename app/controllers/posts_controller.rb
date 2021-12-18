@@ -53,6 +53,7 @@ class PostsController < ApplicationController
 
   private def post_params
     params.require(:post).permit(
+      :new_image,
       :user_id,
       :circle_name,
       :university,
