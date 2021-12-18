@@ -57,8 +57,7 @@ class PostsController < ApplicationController
       :user_id,
       :circle_name,
       :university,
-      :body, 
-      :image
+      :body
     )
   end
 end
