@@ -7,6 +7,9 @@
 
 <h5><%= @post.university %></h5>
 <h5><%= @post.circle_name %></h5>
+<% if @post.picture.attached? %>
+  <%= picture_tag @post.picture.variant(resize: "128x128") %>
+<% end %>
 
 <%= simple_format(@post.body) %>
 

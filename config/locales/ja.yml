@@ -9,8 +9,6 @@ ja:
         mail: メールアドレス
         password: パスワード
         password_confirmation: パスワード（確認）
-        top_image: トップ画像
-        back_iamge: 背景画像
         current_password: 現在のパスワード
         password: 新しいパスワード
         password_confirmaion: 新しいパスワード（確認）
@@ -18,8 +16,9 @@ ja:
         circle_name: サークル名
         university: 大学名
         body: 本文
-        new_image: 画像
+        new_picture: 画像
     errors:
       messages:
         invalid_user_name: は半角英数字で入力してください。
         wrong: が正しくありません。
+        invalid_image_type: にはJPEG、PNG、GIF、BMP形式の画像を指定してください。

@@ -2,14 +2,24 @@ class Post < ApplicationRecord
   validates :circle_name, :university, :body, presence: true
   validates :circle_name, :university, length: { maximum: 30 }
   validates :body, length: { maximum: 2000 }
+
+  validate if: :new_picture do
+    if new_picture.respond_to?(:content_type)
+      unless new_picture.content_type.in?(ALLOWED_CONTENT_TYPES)
+        errors.add(:new_picture, :invalid_image_type)
+      end
+    else
+      errors.add(:new_picture, :invalid)
+    end
+  end
   
   belongs_to :author, class_name: "User", foreign_key: "user_id"
-  has_one_attached :image
-  attribute :new_image
+  has_one_attached :picture
+  attribute :new_picture
 
   before_save do
-    if new_image
-      self.image = new_image
+    if new_picture
+      self.picture = new_picture
     end
   end
 end
