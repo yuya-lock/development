@@ -6,4 +6,10 @@ class Post < ApplicationRecord
   belongs_to :author, class_name: "User", foreign_key: "user_id"
   has_one_attached :image
   attribute :new_image
+
+  before_save do
+    if new_image
+      self.image = new_image
+    end
+  end
 end
