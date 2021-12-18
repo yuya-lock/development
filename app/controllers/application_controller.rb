@@ -1,6 +1,13 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
 
+  class LoginRequired < StandardError; end
+  class Forbidden < StandardError; end
+
+  private def login_required
+    raise LoginRequired unless current_user
+  end
+
   if Rails.env.production? || ENV["RESCUE_EXCEPTIONS"]
     rescue_from StandardError, with: :rescue_internal_server_error
     rescue_from ActiveRecord::RecordNotFound, with: :rescue_not_found
