@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
     if @user.save
       log_in @user
       redirect_to @user, notice: "アカウントを登録しました。"
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    @user.assign_attributes(params[:user])
+    @user.assign_attributes(user_params)
     if @user.save
       redirect_to @user, notice: "アカウント情報を更新しました。"
     else
@@ -31,5 +31,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect_to "#", notice: "アカウントを削除しました。"
+  end
+
+  private def user_params
+    attrs = [
+      :name,
+      :mail
+    ]
+
+    attrs << :password if params[:action] == "create"
+
+    params.require(:user).permit(attrs)
   end
 end

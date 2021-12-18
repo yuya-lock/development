@@ -19,11 +19,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = cuurent_user.posts.find(params[:id])
+    @post = current_user.posts.find(params[:id])
   end
 
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(post_params)
     @post.author = current_user
     # @post.image.attach(params[:post][:image])
     if @post.save
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
 
   def update
     @post = current_user.posts.find(params[:id])
-    @post.assign_attributes(params[:post])
+    @post.assign_attributes(post_params)
     if @post.save
       redirect_to @post, notice: "投稿を更新しました。"
     else
@@ -49,9 +49,13 @@ class PostsController < ApplicationController
     redirect_to :posts, notice: "投稿を削除しました。"
   end
 
-  private
-
-    def post_params
-      params.require(:post).permit(:content, :image)
-    end
+  private def post_params
+    params.require(:post).permit(
+      :user_id,
+      :circle_name,
+      :university,
+      :body, 
+      :image
+    )
+  end
 end
