@@ -7,7 +7,7 @@
 
 <% if @posts.present? %>
   <% @posts.each do |post| %>
-    <p><%= link_to post.author.name, [post.author, :posts] %></p>
+    <p><%= link_to post.author.name, post.author %></p>
     <h5><%= post.university %></h5>
     <h5><%= post.circle_name %></h5>
     <p><%= truncate(post.body, length: 80) %>
