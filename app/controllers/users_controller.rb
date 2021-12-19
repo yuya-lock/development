@@ -19,16 +19,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def update
-    @user = User.find(params[:id])
-    @user.assign_attributes(user_params)
-    if @user.save
-      redirect_to @user, notice: "アカウント情報を更新しました。"
-    else
-      render "edit"
-    end
-  end
-
   def destroy
     @user = User.find(params[:id])
     @user.destroy
