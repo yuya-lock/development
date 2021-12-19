@@ -19,6 +19,12 @@ class AccountsController < ApplicationController
     end
   end
 
+  def destroy
+    @user = current.user
+    @user.destroy
+    redirect_to :root, notice: "アカウントを削除しました。"
+  end
+
   private def account_params
     params.require(:account).permit(
       :name,

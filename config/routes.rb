@@ -9,10 +9,10 @@ Rails.application.routes.draw do
   get "forbidden" => "top#forbidden"
   get "internal_server_error" => "top#internal_server_error"
 
-  resources :users, except: [:index, :edit] do
+  resources :users, only: [:new, :create, :show] do
     resources :posts, only: [:index]
   end
-  resource :account, only: [:show, :edit, :update]
+  resource :account, only: [:show, :edit, :update, :destroy]
   resource :password, only: [:show, :edit, :update]
   resources :posts
 end

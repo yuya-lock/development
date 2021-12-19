@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  before_action :login_required, except: [:new, :create, :show]
-
   def new
     @user = User.new
   end
@@ -17,12 +15,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-  end
-
-  def destroy
-    @user = User.find(params[:id])
-    @user.destroy
-    redirect_to "#", notice: "アカウントを削除しました。"
   end
 
   private def user_params
