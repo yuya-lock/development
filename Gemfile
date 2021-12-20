@@ -29,6 +29,7 @@ gem "nokogiri"
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem "rspec-rails", '~> 4.0.0'
 end
 
 group :development do
@@ -39,13 +40,11 @@ group :development do
   gem 'rubocop'
   gem 'rubocop-rails'
   gem 'pre-commit'
-  gem 'rubocop'
 end
 
 group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  gem "rspec-rails"
   gem "factory_bot_rails"
 end
