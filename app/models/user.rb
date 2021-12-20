@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :posts, dependent: :destroy
+
   attr_accessor :remember_token
   attr_accessor :current_password
 
@@ -13,8 +15,6 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }, on: :create
   validates :password, presence: { if: :current_password }
   # ↑バリデーション↑
-
-  has_many :posts, dependent: :destroy
 
   # 渡された文字列のハッシュ値を返す
   def self.digest(string)

@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
+  belongs_to :author, class_name: "User", foreign_key: "user_id"
+
+  # ↓バリデーション↓
   validates :circle_name, :university, :body, presence: true
   validates :circle_name, :university, length: { maximum: 30 }
   validates :body, length: { maximum: 2000 }
@@ -12,9 +15,10 @@ class Post < ApplicationRecord
       errors.add(:new_picture, :invalid)
     end
   end
+  # ↑バリデーション↑
   
-  belongs_to :author, class_name: "User", foreign_key: "user_id"
   has_one_attached :picture
+  
   attribute :new_picture
   attribute :remove_picture, :boolean
 
