@@ -8,14 +8,15 @@ class ApplicationController < ActionController::Base
     raise LoginRequired unless current_user
   end
 
+  # ↓例外処理↓
   if Rails.env.production? || ENV["RESCUE_EXCEPTIONS"]
-    rescue_from StandardError, with: :rescue_internal_server_error
-    rescue_from ActiveRecord::RecordNotFound, with: :rescue_not_found
+    rescue_from StandardError,                      with: :rescue_internal_server_error
+    rescue_from ActiveRecord::RecordNotFound,       with: :rescue_not_found
     rescue_from ActionController::ParameterMissing, with: :rescue_bad_request
   end
 
   rescue_from LoginRequired, with: :rescue_login_required
-  rescue_from Forbidden, with: :rescue_forbidden
+  rescue_from Forbidden,     with: :rescue_forbidden
 
   private def rescue_bad_request(exception)
     render "errors/bad_request", status: 400, layout: "error", formats: [:html]
@@ -36,4 +37,5 @@ class ApplicationController < ActionController::Base
   private def rescue_internal_server_error(exception)
     render "errors/internal_server_error", status: 500, layout: "error", formats: [:html]
   end
+  # ↑例外処理↑
 end
