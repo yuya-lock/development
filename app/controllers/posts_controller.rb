@@ -27,7 +27,6 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.author = current_user
-    # @post.image.attach(params[:post][:image])
     if @post.save
       redirect_to @post, notice: "投稿しました。"
     else
