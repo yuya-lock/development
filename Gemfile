@@ -37,11 +37,11 @@ group :development do
   gem 'web-console', '>= 4.1.0'
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
-  gem 'spring'
+  # gem 'spring'
   gem 'rubocop'
   gem 'rubocop-rails'
   gem 'pre-commit'
-  gem 'spring-commands-rspec'
+  # gem 'spring-commands-rspec'
 end
 
 group :test do
