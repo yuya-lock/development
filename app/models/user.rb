@@ -12,7 +12,7 @@ class User < ApplicationRecord
   validates :mail, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }, on: :create
   has_secure_password
   
-  validates :password, presence: true, length: { minimum: 6 }, on: :create
+  validates :password, :password_confirmation, presence: true, length: { minimum: 6 }, on: :create
   validates :password, presence: { if: :current_password }
   # ↑バリデーション↑
 
