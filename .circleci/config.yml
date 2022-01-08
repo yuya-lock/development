@@ -13,9 +13,9 @@ jobs:
           path: ~/Zinnia
       - ruby/install-deps
 
-      - run:
-          name: Rubocop
-          command: bundle exec rubocop
+      # - run:
+      #     name: Rubocop
+      #     command: bundle exec rubocop
       
       - run:
           name: run tests
