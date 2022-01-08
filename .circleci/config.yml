@@ -17,6 +17,12 @@ jobs:
       #     name: Rubocop
       #     command: bundle exec rubocop
 
+      - run:
+          name: install dependencies
+          command: |
+            gem install bundler -v 2.0.2
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+
   test:
     docker:
       - image: circleci/ruby:3.0.2
