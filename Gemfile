@@ -51,5 +51,4 @@ group :test do
   gem 'poltergeist'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  gem 'webdrivers'
 end
