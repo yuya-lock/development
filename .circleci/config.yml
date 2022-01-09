@@ -6,7 +6,7 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:3.0.2
+      - image: circleci/ruby:3.0.3
     working_directory: ~/Zinnia/
     steps:
       - checkout:
@@ -19,7 +19,7 @@ jobs:
 
   test:
     docker:
-      - image: circleci/ruby:3.0.2
+      - image: circleci/ruby:3.0.3
       - image: circleci/mysql:5.5
         environment:
           MYSQL_ROOT_PASSWORD: password
@@ -59,7 +59,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/ruby:3.0.2
+      - image: circleci/ruby:3.0.3
     steps:
       - checkout
       - setup_remote_docker:
