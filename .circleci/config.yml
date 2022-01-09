@@ -13,10 +13,6 @@ jobs:
           path: ~/Zinnia
       - ruby/install-deps
 
-      # - run:
-      #     name: Rubocop
-      #     command: bundle exec rubocop
-
   test:
     docker:
       - image: circleci/ruby:3.0.3
@@ -38,6 +34,34 @@ jobs:
       - run:
           name: Database setup
           command: bundle exec rails db:migrate
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "Gemfile.lock" }}
+            - v1-dependencies-
+      - restore_cache:
+          keys:
+            - rails-yarn-{{ checksum "yarn.lock" }}
+            - rails-yarn-
+      - run:
+          name: Install bundler
+          command: gem install bundler -v 2.2.3
+      - run:
+          name: Install gem to local
+          command: bundle config set --local path 'vendor/bundle'
+      - run:
+          name: Install bundle
+          command: |
+            bundle check --path vendor/bundle || bundle install --clean --force --jobs=4 --retry=3
+            bundle install --path vendor/cache
+      - run:
+          name: Install yarn
+          command: yarn install --cache-folder ~/.cache/yarn
+      - run:
+          name: Install webpack
+          command: bundle exec bin/webpack
+      # - run:
+      #     name: Rubocop
+      #     command: bundle exec rubocop
       - run:
           name: run tests
           command: |
