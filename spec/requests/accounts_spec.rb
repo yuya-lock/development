@@ -12,6 +12,6 @@ RSpec.describe "Accounts", type: :request do
     it "returns http success" do
       get "/accounts/edit"
       expect(response).to have_http_status(:success)
-    # end
+    end
   end
 end
