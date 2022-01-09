@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Posts", type: :system do
-  ユーザーが新規投稿を行う
+  # ユーザーが新規投稿を行う
   it "creates a new post" do
     user = FactoryBot.create(:user)
 
