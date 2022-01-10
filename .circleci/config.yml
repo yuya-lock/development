@@ -59,9 +59,9 @@ jobs:
       - run:
           name: Install webpack
           command: bundle exec bin/webpack
-      # - run:
-      #     name: Rubocop
-      #     command: bundle exec rubocop
+      - run:
+          name: Rubocop
+          command: bundle exec rubocop
       - run:
           name: run tests
           command: |
