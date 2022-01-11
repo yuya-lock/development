@@ -137,6 +137,7 @@ GEM
     kaminari-i18n (0.5.0)
       kaminari
       rails
+    kgio (2.11.4)
     launchy (2.5.0)
       addressable (~> 2.7)
     listen (3.7.0)
@@ -211,6 +212,7 @@ GEM
       rake (>= 0.13)
       thor (~> 1.0)
     rainbow (3.0.0)
+    raindrops (0.20.0)
     rake (13.0.6)
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
@@ -288,6 +290,9 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
+    unicorn (6.1.0)
+      kgio (~> 2.6)
+      raindrops (~> 0.7)
     valid_email2 (4.0.1)
       activemodel (>= 3.2)
       mail (~> 2.5)
@@ -348,6 +353,7 @@ DEPENDENCIES
   selenium-webdriver
   sprockets (~> 3.7.2)
   turbolinks (~> 5)
+  unicorn (= 6.1.0)
   valid_email2
   web-console (>= 4.1.0)
   webdrivers
