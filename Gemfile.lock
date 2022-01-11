@@ -353,7 +353,7 @@ DEPENDENCIES
   selenium-webdriver
   sprockets (~> 3.7.2)
   turbolinks (~> 5)
-  unicorn (= 6.1.0)
+  unicorn
   valid_email2
   web-console (>= 4.1.0)
   webdrivers
