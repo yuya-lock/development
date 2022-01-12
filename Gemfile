@@ -28,6 +28,7 @@ gem 'rails-i18n'
 gem 'valid_email2'
 
 gem "fog-aws"
+gem 'carrierwave', '~> 1.0'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
