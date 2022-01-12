@@ -27,6 +27,8 @@ gem 'nokogiri'
 gem 'rails-i18n'
 gem 'valid_email2'
 
+gem "fog-aws"
+
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'factory_bot_rails'
@@ -43,6 +45,11 @@ group :development do
   gem 'rubocop-discourse'
   gem 'rubocop-rails'
   # gem 'spring-commands-rspec'
+  gem "capistrano", "~> 3.10", require: false
+  gem "capistrano-rails", "~> 1.6", require: false
+  gem 'capistrano-rbenv', '~> 2.2'
+  gem 'capistrano-rbenv-vars', '~> 0.1'
+  gem 'capistrano3-puma'
 end
 
 group :test do
